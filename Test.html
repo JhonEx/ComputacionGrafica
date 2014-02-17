@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+
+	<title style = color:blue >   Mi primera pagina   </title>
+// 
+  
+</head>
+
+<body>
+
+<h1> Validador de Numeros Pares o Impares </h1>
+
+
+<br>
+<SPAN> Ingrese el numero a validar :</SPAN> <input name ="numeroa"><br>
+<br>
+
+
+
+<input type="button" value = "Validar" onclick="validar()"> <br>
+
+
+</body>
+
+
+	<script  type = "text/javascript">
+
+
+				function validar()
+			      {	      	
+			      				     		
+			     		numerod = document.getElementsByName('numeroa')[0].value;
+
+if(numerod/1==numerod)
+{
+			     		if (numerod<0 )
+
+			     			alert("Número Inválido");
+
+			     		else if  (numerod%2==0)
+
+			     			alert("El dato es par");
+
+			     		else   	
+			     			alert("El dato es impar");
+
+}
+else
+{
+	alert("Numero Invalido")
+
+ }
+}
+		     
+
+	</script>
+
