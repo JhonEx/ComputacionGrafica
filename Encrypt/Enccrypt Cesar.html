@@ -1,17 +1,87 @@
-<html>
+<htlm>
 <head>
      <title>Encriptado</title>
     <meta charset="utf-8">
 
     <meta name="description" content="This is my really, really, REALLY exciting web page about air conditioners">
+    
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <style type="text/css">
+    .spandiv { width:300px; display: inline-block;}
+    #resultado {padding:5px; border: 1px solid; width: 700px; height: 30px; margin-top: 10px;
+                background: #f0f9ff; /* Old browsers */
+                    background: -moz-linear-gradient(top,  #f0f9ff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
+                    background: -webkit-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
+                    background: -o-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Opera 11.10+ */
+                    background: -ms-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* IE10+ */
+                    background: linear-gradient(to bottom,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* W3C */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+
+            }
+
+    body{ font-family: arial; font-size: 15px; padding: 10px;} 
+
+    #Encrypt {margin-top: 10px}
+
+    .boton{
+        -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+        background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+        background-color:#ededed;
+        -webkit-border-top-left-radius:6px;
+        -moz-border-radius-topleft:6px;
+        border-top-left-radius:6px;
+        -webkit-border-top-right-radius:6px;
+        -moz-border-radius-topright:6px;
+        border-top-right-radius:6px;
+        -webkit-border-bottom-right-radius:6px;
+        -moz-border-radius-bottomright:6px;
+        border-bottom-right-radius:6px;
+        -webkit-border-bottom-left-radius:6px;
+        -moz-border-radius-bottomleft:6px;
+        border-bottom-left-radius:6px;
+        text-indent:0;
+        border:1px solid #dcdcdc;
+        display:inline-block;
+        color:#777777;
+        font-family:arial;
+        font-size:15px;
+        font-weight:bold;
+        font-style:normal;
+        height:50px;
+        line-height:50px;
+        width:100px;
+        text-decoration:none;
+        text-align:center;
+        text-shadow:1px 1px 0px #ffffff;
+        }
+    .boton:hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+        background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+        background-color:#dfdfdf;
+    }.boton:active {
+        position:relative;
+        top:1px;
+    }
+
+</style>
+
 </head>
 <body>
-    <span>Ingrese la palabra</span>
+    <div class="spandiv"> 
+        <span>Ingrese la palabra</span>
+    </div>
     <input id="palabra"><br>
-    <span>Ingrese el número de corrimientos</span>
+    <div class="spandiv"> 
+        <span>Ingrese el número de corrimientos</span>
+    </div>
     <input id="corrimientos"><br>
-    <input type="button" value="Encriptar" id="Encrypt">
+    <input class= "boton" type="button" value="Encriptar" id="Encrypt">
     <div id="resultado"></div>
 </body>
 </html>
@@ -21,8 +91,9 @@ $('#Encrypt').on('click',function()
     $("#resultado").html(" ")
     var abc='abcdefghijklmnopqrstuvwxyz' 
     texto = $('#palabra').val().toLowerCase();
-    corrimiento = parseInt($('#corrimientos').val());   
-    if(texto.length !== 0 && corrimiento.length !==0)
+    corrimiento = $('#corrimientos').val();   
+    
+    if(texto.length !== 0 && corrimiento.length !==0 && isNaN(corrimiento)==false)
     {
         for (var i=0;i<texto.length;i++)
         {   
