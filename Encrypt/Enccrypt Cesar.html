@@ -1,0 +1,38 @@
+<html>
+<head>
+     <title>Encriptado</title>
+    <meta charset="utf-8">
+
+    <meta name="description" content="This is my really, really, REALLY exciting web page about air conditioners">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <span>Ingrese la palabra</span>
+    <input id="palabra"><br>
+    <span>Ingrese el número de corrimientos</span>
+    <input id="corrimientos"><br>
+    <input type="button" value="Encriptar" id="Encrypt">
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+$('#Encrypt').on('click',function()
+{
+    $("#resultado").html(" ")
+    var abc='abcdefghijklmnopqrstuvwxyz' 
+    texto = $('#palabra').val().toLowerCase();
+    corrimiento = parseInt($('#corrimientos').val());   
+    if(texto.length !== 0 && corrimiento.length !==0)
+    {
+        for (var i=0;i<texto.length;i++)
+        {   
+             $("#resultado").append(abc.charAt((abc.indexOf(texto.charAt(i))+corrimiento)%abc.length));
+        }   
+    }
+    else
+    {
+        alert("Ingrese valores en los campos")
+    }
+   
+})
+</script>
