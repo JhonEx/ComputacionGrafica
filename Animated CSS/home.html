@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">    
+	<title>Mi Animación</title>
+    <script type="text/javascript">
+    
+        $( document ).ready(function() {
+            $('#1').click(function(){               
+               $('.animar').addClass('animated bounceOutLeft');
+            });
+             $('#2').click(function(){               
+               $('.animar').addClass('animated bounceOutRight');
+            });
+
+              $('#3').click(function(){               
+               $('.animar').addClass('animated bounceInUp');
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+	<header>
+        <img class="animar" src="logo.png">
+	</header>
+	<section>
+        <a href="#" id="1"> BounceOutLeft Animation </a> <br>
+        <a href="#" id="2"> BounceOutRight Animation </a> <br>
+        <a href="#" id="3"> BounceInUp Animation </a> <br>
+	</section>
+</body>
+
+</html>
