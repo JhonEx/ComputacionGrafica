@@ -7,11 +7,22 @@
     <link rel="stylesheet" type="text/css" href="styles.css">    
 	<title>Mi Animación</title>
     <script type="text/javascript">
-    
-        $( document ).ready(function() {
+
+            
+
+            function testAnim() {
+                $('.animar').removeClass();
+                };
+             
+        
+            $( document ).ready(function() {      
+
             $('#1').click(function(){               
                $('.animar').addClass('animated bounceOutLeft');
             });
+
+            //testAnim();
+
              $('#2').click(function(){               
                $('.animar').addClass('animated bounceOutRight');
             });
@@ -19,6 +30,8 @@
               $('#3').click(function(){               
                $('.animar').addClass('animated bounceInUp');
             });
+
+             
         });
 
     </script>
